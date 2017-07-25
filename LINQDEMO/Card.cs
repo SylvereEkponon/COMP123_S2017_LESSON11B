@@ -6,13 +6,13 @@ using System.Text;
  * Name: Sylvere Ekponon
  * Date: July 25, 2017
  * Description:this is the card class
- * Version:created the card class
+ * Version 0.2 - implemented the ICloneable interface
  */
 
 namespace LINQDEMO
 {
     //This is the Card class
-    public class Card
+    public class Card : ICloneable
     {
         // PRIVATE INSTANCE VARIABLES
 
@@ -96,11 +96,20 @@ namespace LINQDEMO
 
 
 
+
         // PRIVATE METHODS
 
 
 
         // PUBLIC METHODS
+        /// <summary>
+        /// This method overrides the built-in Clone method.
+        /// </summary>
+        /// <returns></returns>
+        public object Clone()
+        {
+            return new Card(this.Face, this.Suit);
+        }
 
     }
 }

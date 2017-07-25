@@ -8,7 +8,7 @@ using System.Threading.Tasks;
  * Name: Sylvere Ekponon
  * Date: July 25, 2017
  * Description:this is the Desk class
- * Version:created the Desk class
+ * Version: 0.2 - Added the Shuffle method
  */
 
 namespace LINQDEMO
@@ -17,7 +17,7 @@ namespace LINQDEMO
     {
 
         // PRIVATE INSTANCE VARIABLES
-
+        private Random _random;
 
 
         // PUBLIC PROPERTIES
@@ -55,9 +55,11 @@ namespace LINQDEMO
         /// </summary>
 
         private void _initialize()
-
         {
+            //initialize the pseudo-random number generator
+            this._random = new Random();
 
+            //
             for (int suit = (int)Suit.Diamonds; suit <= (int)Suit.Spades; suit++)
 
             {
@@ -93,24 +95,37 @@ namespace LINQDEMO
         /// </returns>
 
         public override string ToString()
-
         {
-
             string outputString = "";
-
-
-
             foreach (Card card in this)
-
             {
-
                 outputString += "The " + card.Face + " of " + card.Suit + "\n";
-
             }
 
-
-
             return outputString;
+        }
+
+        /// <summary>
+        /// this method shuffles the deck by using random indices
+        /// to select to Card at the time. It uses a Fisher-Yates like algorithm
+        /// </summary>
+        public void Shuffle()
+        {
+            int firstCard;
+            int secondCard;
+            Card tempCard;
+
+            for (int card = 0; card < this.Count; card++)
+            {
+                firstCard = this._random.Next(0, 52);
+                secondCard = this._random.Next(0, 52);
+
+                tempCard = (Card)this[secondCard].Clone();
+                this[secondCard].Face = this[firstCard].Face;
+                this[secondCard].Suit = this[firstCard].Suit;
+                this[firstCard].Face = tempCard.Face;
+                this[firstCard].Suit = tempCard.Suit;
+            }
         }
     }
 }

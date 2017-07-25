@@ -3,9 +3,10 @@
   <Class Name="LINQDEMO.Card">
     <Position X="5.75" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAABAAAAAAAAAAAAABAgAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <HashCode>AAAAAABAAAAAAAAAAAAABAgAAAAAAAAAAAAAAAAAgBA=</HashCode>
       <FileName>Card.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Enum Name="LINQDEMO.Suit" Collapsed="true">
     <Position X="1" Y="1" Width="1.5" />
@@ -17,7 +18,7 @@
   <Enum Name="LINQDEMO.Face" Collapsed="true">
     <Position X="2.75" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAAAAAAAAAAggAAAEAAEAIAAAAAFBAAAAAgAAAgAAME=</HashCode>
+      <HashCode>gAAAAAAAAAAggAAAEAAEAIAAAAAFBAAAAAgAAAgAAEE=</HashCode>
       <FileName>Face.cs</FileName>
     </TypeIdentifier>
   </Enum>
