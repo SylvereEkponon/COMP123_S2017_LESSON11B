@@ -16,8 +16,6 @@ namespace LINQDEMO
     {
         Ace =1,
 
-        One,
-
         Two,
        
         Three,
