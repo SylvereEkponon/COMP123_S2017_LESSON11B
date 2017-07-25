@@ -6,7 +6,7 @@ using System.Text;
  * Name: Sylvere Ekponon
  * Date: July 25, 2017
  * Description:this is the card class
- * Version 0.2 - implemented the ICloneable interface
+ * Version 0.2 - Added the Overwrite method
  */
 
 namespace LINQDEMO
@@ -109,6 +109,17 @@ namespace LINQDEMO
         public object Clone()
         {
             return new Card(this.Face, this.Suit);
+        }
+
+        /// <summary>
+        /// This method takes the properties of the first card and overwrites the properties of the second card
+        /// </summary>
+        /// <param name="first"></param>
+        /// <param name="second"></param>
+        public static void Overwrite(Card first, Card second)
+        {
+            first.Face = second.Face;
+            first.Suit = second.Suit;
         }
 
     }

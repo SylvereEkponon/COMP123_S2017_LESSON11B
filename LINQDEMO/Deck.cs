@@ -8,7 +8,7 @@ using System.Threading.Tasks;
  * Name: Sylvere Ekponon
  * Date: July 25, 2017
  * Description:this is the Desk class
- * Version: 0.2 - Added the Shuffle method
+ * Version: 0.2 - Refactored the Shuffle method
  */
 
 namespace LINQDEMO
@@ -117,14 +117,17 @@ namespace LINQDEMO
 
             for (int card = 0; card < this.Count; card++)
             {
-                firstCard = this._random.Next(0, 52);
-                secondCard = this._random.Next(0, 52);
+                firstCard = this._random.Next(0, this.Count);
+                secondCard = this._random.Next(0, this.Count);
 
                 tempCard = (Card)this[secondCard].Clone();
-                this[secondCard].Face = this[firstCard].Face;
-                this[secondCard].Suit = this[firstCard].Suit;
-                this[firstCard].Face = tempCard.Face;
-                this[firstCard].Suit = tempCard.Suit;
+                Card.Overwrite(this[secondCard], this[firstCard]);
+                Card.Overwrite(this[firstCard], tempCard);
+
+                //this[secondCard].Face = this[firstCard].Face;
+                //this[secondCard].Suit = this[firstCard].Suit;
+                //this[firstCard].Face = tempCard.Face;
+                //this[firstCard].Suit = tempCard.Suit;
             }
         }
     }
