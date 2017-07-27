@@ -9,7 +9,7 @@ using System.Threading.Tasks;
  * Date: July 25, 2017
  * Description:this is the Desk class
  * It inherits from the the cardList abstract class
- * Version: 0.5 - Added the Deal1 method
+ * Version: 0.6 - Added the Deal5 method
  */
 
 namespace LINQDEMO
@@ -110,6 +110,18 @@ namespace LINQDEMO
             //
             Console.WriteLine("Dealt 1 card - Size of Deck: " + this.Count);
             return topCard;
+        }
+
+        public Hand Deal5()
+        {
+            Hand hand = new Hand();
+            for (int i = 0; i < 5; i++)
+            {
+                Card topCard = this[0];
+                this.RemoveAt(0);
+                hand.Add(topCard);
+            }
+            return hand;
         }
     }
 }
