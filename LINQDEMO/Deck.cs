@@ -8,12 +8,13 @@ using System.Threading.Tasks;
  * Name: Sylvere Ekponon
  * Date: July 25, 2017
  * Description:this is the Desk class
- * Version: 0.2 - Refactored the Shuffle method
+ * It inherits from the the cardList abstract class
+ * Version: 0.3 - Refactored to extend the CardList abstract class
  */
 
 namespace LINQDEMO
 {
-    class Deck : List<Card>
+    class Deck : CardList
     {
 
         // PRIVATE INSTANCE VARIABLES
@@ -54,7 +55,7 @@ namespace LINQDEMO
 
         /// </summary>
 
-        private void _initialize()
+        protected override void _initialize()
         {
             //initialize the pseudo-random number generator
             this._random = new Random();
