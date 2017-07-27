@@ -108,7 +108,7 @@ namespace LINQDEMO
             this.RemoveAt(0); //this removes the top card from the deck
 
             //
-            Console.WriteLine("Dealt 1 card - Size of Deck: " + this.Count);
+            //Console.WriteLine("Dealt 1 card - Size of Deck: " + this.Count);
             return topCard;
         }
 
@@ -117,9 +117,7 @@ namespace LINQDEMO
             Hand hand = new Hand();
             for (int i = 0; i < 5; i++)
             {
-                Card topCard = this[0];
-                this.RemoveAt(0);
-                hand.Add(topCard);
+                hand.Add(Deal1());
             }
             return hand;
         }

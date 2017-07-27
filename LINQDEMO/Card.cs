@@ -7,6 +7,7 @@ using System.Text;
  * Date: July 25, 2017
  * Description:this is the card class
  * Version 0.2 - Added the Overwrite method
+ * Version 0.3 - Overwritten the ToString method
  */
 
 namespace LINQDEMO
@@ -120,6 +121,14 @@ namespace LINQDEMO
         {
             first.Face = second.Face;
             first.Suit = second.Suit;
+        }
+
+        public override string ToString()
+        {
+            string outputString = "";
+            outputString += "The " + this.Face + " of " + this.Suit;
+            return outputString;
+
         }
 
     }

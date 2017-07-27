@@ -9,6 +9,8 @@ using System.Text;
  * Description: this is the Hand class
  * It inherits from the the cardList abstract class
  * Version: 0.1 - Created the Hand Class
+ * Version: 0.2 - Added the Highest Card Method
+ * Version: 0.3 - Refactored the Highest Card Method
  */
 
 namespace LINQDEMO
@@ -51,6 +53,22 @@ namespace LINQDEMO
                 outputString += "The " + card.Face + " of " + card.Suit + "\n";
             }
             return outputString;
+        }
+
+        /// <summary>
+        /// This is the HighestCards method
+        /// </summary>
+        public void HighestCards()
+        {
+            var sorted = from card in this
+                         orderby card.Face
+                         select card;
+            var reserveOrder = from card in sorted
+                               orderby card.Face descending
+                               select card;
+            Console.WriteLine("\nThe Highest Card is "+reserveOrder.First());
+
+            
         }
     }
 }
