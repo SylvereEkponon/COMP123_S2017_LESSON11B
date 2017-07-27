@@ -9,7 +9,7 @@ using System.Threading.Tasks;
  * Date: July 25, 2017
  * Description:this is the Desk class
  * It inherits from the the cardList abstract class
- * Version: 0.4 - Refactored ToString method to include a header
+ * Version: 0.5 - Added the Deal1 method
  */
 
 namespace LINQDEMO
@@ -132,6 +132,13 @@ namespace LINQDEMO
                 //this[firstCard].Face = tempCard.Face;
                 //this[firstCard].Suit = tempCard.Suit;
             }
+        }
+
+        public Card Deal1()
+        {
+            Card topCard = this[0];
+            this.RemoveAt(0); //this removes the top card from the deck
+            return topCard;
         }
     }
 }
