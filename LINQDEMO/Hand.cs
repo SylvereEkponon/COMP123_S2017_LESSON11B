@@ -11,6 +11,7 @@ using System.Text;
  * Version: 0.1 - Created the Hand Class
  * Version: 0.2 - Added the Highest Card Method
  * Version: 0.3 - Refactored the Highest Card Method
+ * Version: 0.4 - Refactored the Highest Card Method
  */
 
 namespace LINQDEMO
@@ -66,7 +67,15 @@ namespace LINQDEMO
             var reserveOrder = from card in sorted
                                orderby card.Face descending
                                select card;
-            Console.WriteLine("\nThe Highest Card is "+reserveOrder.First());
+            Console.Write("The HIGHEST card is \n");
+            foreach (var item in reserveOrder)
+            {
+                if ((int)item.Face==(int)reserveOrder.First().Face)
+                {
+                    Console.WriteLine(item);
+                }
+            }
+            //Console.WriteLine("\nThe Highest Card is "+reserveOrder.First());
 
             
         }
