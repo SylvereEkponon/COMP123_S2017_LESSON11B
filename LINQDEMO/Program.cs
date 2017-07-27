@@ -11,6 +11,7 @@ using System.Threading.Tasks;
  * Version: 0.1 - created the Project
  * version: 0.2 - Implemented the Desk class
  * version: 0.3 - Test Shuffle method of the Deck class
+ * version: 0.4 - Tested the new Desk class
  */
 namespace LINQDEMO
 {
@@ -19,15 +20,20 @@ namespace LINQDEMO
         static void Main(string[] args)
         {
             Deck deck = new Deck();
-            Console.WriteLine("Original Desk");
-            Console.WriteLine("=======================================================");
+            Hand hand = new Hand();
+
             Console.WriteLine(deck.ToString());
             Console.WriteLine();
             deck.Shuffle();
-            Console.WriteLine("Shuffled Desk");
-            Console.WriteLine("=======================================================");
+            Console.WriteLine("Shuffled");
             Console.WriteLine(deck.ToString());
+            hand.Add(deck.Deal1());
+            Console.WriteLine(hand.ToString());
             Console.WriteLine();
+            hand.Add(deck.Deal1());
+            Console.WriteLine(hand.ToString());
+            Console.WriteLine();
+            Console.WriteLine(deck.ToString());
         }
     }
 }

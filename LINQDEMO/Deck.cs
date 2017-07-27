@@ -25,23 +25,6 @@ namespace LINQDEMO
 
 
 
-        // CONSTRUCTOR
-
-        /// <summary>
-
-        /// This is the main constructor.
-
-        /// </summary>
-
-        public Deck()
-
-        {
-
-            this._initialize();
-
-        }
-
-
 
         // PRIVATE METHODS
 
@@ -62,37 +45,22 @@ namespace LINQDEMO
 
             //
             for (int suit = (int)Suit.Diamonds; suit <= (int)Suit.Spades; suit++)
-
             {
-
                 for (int face = (int)Face.Ace; face <= (int)Face.King; face++)
-
                 {
-
                     this.Add(new Card((Face)face, (Suit)suit));
-
                 }
-
             }
-
         }
-
 
 
         // PUBLIC METHODS
 
-
-
         /// <summary>
-
         /// This method overrides the built-in ToString method.
-
         /// </summary>
-
         /// <returns>
-
         /// This method returns the current cards in the deck
-
         /// </returns>
 
         public override string ToString()
@@ -138,6 +106,9 @@ namespace LINQDEMO
         {
             Card topCard = this[0];
             this.RemoveAt(0); //this removes the top card from the deck
+
+            //
+            Console.WriteLine("Dealt 1 card - Size of Deck: " + this.Count);
             return topCard;
         }
     }
