@@ -15,6 +15,13 @@
       <FileName>CardList.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="LINQDEMO.Hand">
+    <Position X="3.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Hand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Enum Name="LINQDEMO.Suit" Collapsed="true">
     <Position X="1" Y="1" Width="1.5" />
     <TypeIdentifier>
