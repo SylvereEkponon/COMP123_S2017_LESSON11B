@@ -9,7 +9,7 @@ using System.Threading.Tasks;
  * Date: July 25, 2017
  * Description:this is the Desk class
  * It inherits from the the cardList abstract class
- * Version: 0.3 - Refactored to extend the CardList abstract class
+ * Version: 0.4 - Refactored ToString method to include a header
  */
 
 namespace LINQDEMO
@@ -98,6 +98,8 @@ namespace LINQDEMO
         public override string ToString()
         {
             string outputString = "";
+            outputString += "Deck Contains Number of Cards: " + this.Count + "\n";
+            outputString += "=======================================================\n";
             foreach (Card card in this)
             {
                 outputString += "The " + card.Face + " of " + card.Suit + "\n";
